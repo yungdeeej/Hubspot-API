@@ -1,0 +1,19 @@
+run = "npm start"
+entrypoint = "server/index.js"
+modules = ["nodejs-20", "postgresql-16"]
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["npm", "start"]
+deploymentTarget = "cloudrun"
+build = ["sh", "-c", "npm install && cd client && npm install && npm run build"]
+
+[[ports]]
+localPort = 3000
+externalPort = 80
+
+[[ports]]
+localPort = 5173
+externalPort = 5173

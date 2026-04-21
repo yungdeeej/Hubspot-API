@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.local
+*.log
+dist/
+build/
+client/dist/
+.DS_Store
+.replit.local
+.cache/
+coverage/
+*.tmp
